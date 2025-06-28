@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive HTML Tutorial</title>
+    <link rel="icon" type="image/jpeg" href="https://tribe-s3-production.imgix.net/NvYDBzbtOISYE3sY4cD1d?auto=compress,format&dl">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        nav {
+      background: #1a237e;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+        header {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+        }
+        header h1{
+             font-size: 2.5em;
+        }
+        main {
+            padding: 2em;
+            max-width: 900px;
+            margin: 2em auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 2em;
+        }
+        h1, h2, h3 {
+            color: #0078d7;
+            margin-bottom: 0.5em;
+        }
+         h1{
+            font-size: 2em;
+        }
+        h2{
+            font-size: 1.5em;
+        }
+        h3{
+            font-size: 1.2em;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        a {
+            color: #0078d7;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        code {
+            font-family: monospace;
+            background-color: #f0f0f0;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 1em;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: monospace;
+            margin-bottom: 1em;
+            line-height: 1.4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.8em;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        form {
+            margin-bottom: 1em;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        input[type="text"], input[type="email"], input[type="password"],
+        textarea, select {
+            width: 100%;
+            padding: 0.8em;
+            margin-bottom: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+        button {
+            background-color: #0078d7;
+            color: white;
+            padding: 0.8em 1.6em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+    text-align: center;
+    background-color: #4b5563;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+        .image-container {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            main {
+                padding: 1.5em;
+            }
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+             header h1{
+                font-size: 2em;
+            }
+             h1{
+                font-size: 1.75em;
+            }
+            h2{
+                font-size: 1.25em;
+            }
+            h3{
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Comprehensive HTML Tutorial</h1>
+        <p>Learn HTML from the basics to advanced concepts</p>
+       
+    </header>
+     <nav>
+    <a href="Overview Homepage.html">Home</a>
+    <a href="HTML Overview.html">HTML</a>
+    <a href="CSS Overview.html">CSS</a>
+    <a href="Javascript Overview.html">JavaScript</a>
+  </nav>
+    <main>
+        <section id="introduction">
+            <h2>Introduction to HTML</h2>
+            <p>
+                HTML (HyperText Markup Language) is the standard markup language for creating web pages.
+                It provides the structure of a webpage, while CSS handles the styling and JavaScript adds interactivity.
+            </p>
+            <p>
+                This tutorial covers HTML5, the latest version of the HTML standard.  We'll explore the core concepts and dive into more advanced topics.
+            </p>
+        </section>
+
+        <section id="basic-structure">
+            <h2>Basic Structure of an HTML Document</h2>
+            <p>
+                Every HTML document follows a standard structure:
+            </p>
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Content of the webpage goes here --&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+            <p>
+                Let's break down each part:
+            </p>
+            <ul>
+                <li><code>&lt;!DOCTYPE html&gt;</code>:  The document type declaration.  It tells the browser which version of HTML the page is written in.  For HTML5, it's simply <code>&lt;!DOCTYPE html&gt;</code>.</li>
+                <li><code>&lt;html&gt;</code>: The root element of the HTML page.  The <code>lang</code> attribute specifies the language of the document (e.g., "en" for English). This is important for accessibility and search engines.</li>
+                <li><code>&lt;head&gt;</code>: Contains meta-information about the document, such as the title, character set, and viewport settings.  This information is not displayed on the page itself.</li>
+                <li><code>&lt;body&gt;</code>: Contains all the visible content of the webpage, including text, images, links, and other elements.</li>
+            </ul>
+        </section>
+
+        <section id="headings">
+            <h2>Headings</h2>
+            <p>
+                HTML headings are used to structure content.  There are six levels of headings, from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>.  <code>&lt;h1&gt;</code> is the most important heading, while <code>&lt;h6&gt;</code> is the least.
+            </p>
+            <pre><code>
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;h3&gt;Section Heading&lt;/h3&gt;
+&lt;h4&gt;Subsection Heading&lt;/h4&gt;
+&lt;h5&gt;Minor Heading&lt;/h5&gt;
+&lt;h6&gt;Smallest Heading&lt;/h6&gt;
+            </code></pre>
+            <p>
+                Proper use of headings is crucial for SEO and accessibility.  Use headings to create a clear document outline.
+            </p>
+        </section>
+
+        <section id="paragraphs">
+            <h2>Paragraphs</h2>
+            <p>
+                The <code>&lt;p&gt;</code> tag is used for paragraphs of text.  Browsers automatically add some space before and after each paragraph.
+            </p>
+            <pre><code>
+&lt;p&gt;This is the first paragraph.  It can contain multiple sentences.  The text will wrap automatically to fit the width of the browser window.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.  Each paragraph should represent a distinct block of text.&lt;/p&gt;
+            </code></pre>
+        </section>
+
+        <section id="text-formatting">
+            <h2>Text Formatting</h2>
+            <p>
+                HTML provides several tags for formatting text:
+            </p>
+            <ul>
+                <li><code>&lt;strong&gt;</code>:  Important text, usually displayed in bold.</li>
+                <li><code>&lt;em&gt;</code>:  Emphasized text, usually displayed in italic.</li>
+                <li><code>&lt;br&gt;</code>:  Inserts a single line break.  Use this sparingly; use paragraphs for larger blocks of text.</li>
+                <li><code>&lt;hr&gt;</code>:  Creates a horizontal rule (line) across the page.</li>
+                <li><code>&lt;mark&gt;</code>:  Marks highlighted text.</li>
+                <li><code>&lt;small&gt;</code>: Defines smaller text.</li>
+                <li><code>&lt;del&gt;</code>: Represents deleted text.</li>
+                <li><code>&lt;ins&gt;</code>: Represents inserted text.</li>
+                <li><code>&lt;sub&gt;</code>: Subscript text.</li>
+                <li><code>&lt;sup&gt;</code>: Superscript text.</li>
+            </ul>
+            <pre><code>
+&lt;p&gt;&lt;strong&gt;This is important text&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This text is emphasized&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This is a line&lt;br&gt;with a line break.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;This is &lt;mark&gt;highlighted&lt;/mark&gt; text.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;This is smaller text.&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Deleted text&lt;/del&gt; &lt;ins&gt;Inserted text&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;This is &lt;sub&gt;subscript&lt;/sub&gt; and &lt;sup&gt;superscript&lt;/sup&gt; text.&lt;/p&gt;
+            </code></pre>
+        </section>
+
+        <section id="links">
+            <h2>Links</h2>
+            <p>
+                The <code>&lt;a&gt;</code> tag is used to create hyperlinks.  Links can point to other web pages, files, or locations within the same page.
+            </p>
+            <pre><code>
+&lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;
+&lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer"&gt;Visit Example (new tab)&lt;/a&gt;
+&lt;a href="/about.html"&gt;About Us&lt;/a&gt; &lt;!-- Relative link --&gt;
+&lt;a href="#section3"&gt;Jump to Section 3&lt;/a&gt; &lt;!-- Link to an ID on the same page --&gt;
+&lt;a href="mailto:info@example.com"&gt;Email Us&lt;/a&gt;
+            </code></pre>
+            <p>
+                Attributes:
+            </p>
+            <ul>
+                <li><code>href</code>:  Specifies the URL of the link.  It can be an absolute URL (like "https://www.example.com"), a relative URL (like "/about.html"), a link to an element on the same page (like "#section3"), or a mailto link ("mailto:info@example.com").</li>
+                <li><code>target</code>: Specifies where to open the linked document.  Common values include <code>_blank</code> (new tab or window), <code>_self</code> (default, opens in the same tab), <code>_parent</code>, and <code>_top</code> (used with frames).</li>
+                <li><code>rel</code>: Specifies the relationship between the current document and the linked document.  <code>noopener</code> and <code>noreferrer</code> are often used with <code>target="_blank"</code> for security reasons.</li>
+            </ul>
+        </section>
+
+        <section id="images">
+            <h2>Images</h2>
+            <p>
+                The <code>&lt;img&gt;</code> tag is used to embed images in a web page.  Images can improve the visual appeal of a page and convey information.
+            </p>
+            <div class="image-container">
+                <img src="data:image/jpeg;base64,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" alt="Placeholder Image" width="300" height="200">
+            </div>
+            <pre><code>
+&lt;img src="images/myimage.jpg" alt="Description of the image" width="300" height="200"&gt;
+            </code></pre>
+            <p>
+                Attributes:
+            </p>
+            <ul>
+                <li><code>src</code>: Specifies the path to the image file.  The path can be relative or absolute.</li>
+                <li><code>alt</code>: Provides alternative text for the image.  This is essential for accessibility (screen readers) and if the image fails to load.  It's also good for SEO.</li>
+                <li><code>width</code> and <code>height</code>:  Specify the dimensions of the image in pixels.  It's a good practice to include these to prevent layout shifts while the image is loading.  You can also use CSS to style the image dimensions.</li>
+            </ul>
+        </section>
+
+        <section id="lists">
+            <h2>Lists</h2>
+            <p>
+                HTML supports ordered lists, unordered lists, and definition lists.  Lists are used to structure content in a clear and organized way.
+            </p>
+            <h3>Unordered Lists (<code>&lt;ul&gt;</code>)</h3>
+            <p>
+                Unordered lists are used for items that do not have a specific order.  They are typically displayed with bullet points.
+            </p>
+            <pre><code>
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+            </code></pre>
+            <h3>Ordered Lists (<code>&lt;ol&gt;</code>)</h3>
+            <p>
+                Ordered lists are used for items that have a specific order.  They are typically displayed with numbers.
+            </p>
+            <pre><code>
+&lt;ol&gt;
+    &lt;li&gt;First step&lt;/li&gt;
+    &lt;li&gt;Second step&lt;/li&gt;
+    &lt;li&gt;Third step&lt;/li&gt;
+&lt;/ol&gt;
+            </code></pre>
+             <h3>Definition Lists (<code>&lt;dl&gt;</code>)</h3>
+            <p>
+                Definition lists are used to define terms and their descriptions.
+            </p>
+            <pre><code>
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Hypertext Markup Language&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;
+            </code></pre>
+             <p>
+                Lists can be nested within each other to create hierarchical structures.
+            </p>
+            <pre><code>
+&lt;ul&gt;
+  &lt;li&gt;Item 1
+    &lt;ul&gt;
+      &lt;li&gt;Sub-item 1.1&lt;/li&gt;
+      &lt;li&gt;Sub-item 1.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+            </code></pre>
+        </section>
+
+        <section id="tables">
+            <h2>Tables</h2>
+            <p>
+                The <code>&lt;table&gt;</code> tag is used to create tables.  Tables are used to display data in a structured format.
+            </p>
+            <pre><code>
+&lt;table&gt;
+  &lt;caption&gt;Sample Data Table&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;John Doe&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;New York&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Jane Smith&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;Los Angeles&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+        <th colspan="3">Source: Example Data</th>
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+            </code></pre>
+            <p>
+                Key tags:
+            </p>
+            <ul>
+                <li><code>&lt;table&gt;</code>:  The table element.</li>
+                <li><code>&lt;caption&gt;</code>:  Adds a caption to the table.</li>
+                <li><code>&lt;thead&gt;</code>:  The table header.</li>
+                <li><code>&lt;tbody&gt;</code>:  The table body.</li>
+                <li><code>&lt;tfoot&gt;</code>: The table footer</li>
+                <li><code>&lt;tr&gt;</code>:  Table row.</li>
+                <li><code>&lt;th&gt;</code>:  Table header cell.</li>
+                <li><code>&lt;td&gt;</code>:  Table data cell.</li>
+                <li><code>colspan</code>:  Attribute to make a cell span across multiple columns.</li>
+                <li><code>rowspan</code>: Attribute to make a cell span across multiple rows.</li>
+            </ul>
+        </section>
+
+        <section id="forms">
+            <h2>Forms</h2>
+            <p>
+                The <code>&lt;form&gt;</code> tag is used to create HTML forms for user input.  Forms are used to collect data from users, such as names, email addresses, and passwords.
+            </p>
+            <pre><code>
+&lt;form action="/submit-form" method="post"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Personal Information&lt;/legend&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" placeholder="Enter your name" required&gt;&lt;br&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" placeholder="Enter your email" required&gt;&lt;br&gt;
+
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8"&gt;&lt;br&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Preferences&lt;/legend&gt;
+    &lt;label&gt;Gender:&lt;/label&gt;
+    &lt;input type="radio" id="male" name="gender" value="male"&gt;
+    &lt;label for="male"&gt;Male&lt;/label&gt;
+    &lt;input type="radio" id="female" name="gender" value="female"&gt;
+    &lt;label for="female"&gt;Female&lt;/label&gt;&lt;br&gt;
+
+    &lt;label for="subscribe"&gt;Subscribe to newsletter:&lt;/label&gt;
+    &lt;input type="checkbox" id="subscribe" name="subscribe" checked&gt;&lt;br&gt;
+
+    &lt;label for="cars"&gt;Choose a car:&lt;/label&gt;
+    &lt;select id="cars" name="cars"&gt;
+      &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+      &lt;option value="saab"&gt;Saab&lt;/option&gt;
+      &lt;option value="mercedes"&gt;Mercedes&lt;/option&gt;
+      &lt;option value="audi"&gt;Audi&lt;/option&gt;
+    &lt;/select&gt;&lt;br&gt;
+  &lt;/fieldset&gt;
+
+  &lt;label for="message"&gt;Message:&lt;/label&gt;&lt;br&gt;
+  &lt;textarea id="message" name="message" rows="4" cols="50" placeholder="Enter your message"&gt;&lt;/textarea&gt;&lt;br&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;button type="reset"&gt;Reset&lt;/button&gt;
+&lt;/form&gt;
+            </code></pre>
+            <p>
+                Common input types and attributes:
+            </p>
+            <ul>
+                <li><code>text</code>:  Single-line text input.  The <code>placeholder</code> attribute provides a hint to the user.  The <code>required</code> attribute makes the field mandatory.</li>
+                <li><code>email</code>: Input field for email addresses.  The browser will validate the input.</li>
+                <li><code>password</code>:  Password input.  The input is masked.  The <code>minlength</code> attribute specifies the minimum number of characters.</li>
+                <li><code>radio</code>:  Radio buttons.  Used to select one option from a group.  The <code>name</code> attribute must be the same for all radio buttons in the group.</li>
+                <li><code>checkbox</code>:  Checkboxes.  Used to select one or more options.  The <code>checked</code> attribute makes the checkbox selected by default.</li>
+                <li><code>submit</code>:  Submit button.  Sends the form data to the server.</li>
+                <li><code>reset</code>:  Reset button.  Resets the form fields to their initial values.</li>
+                <li><code>textarea</code>:  Multi-line text input.  The <code>rows</code> and <code>cols</code> attributes specify the size of the textarea.</li>
+                <li><code>select</code>:  Dropdown list.  The <code>&lt;option&gt;</code> tags define the options in the list.</li>
+            </ul>
+             <p>Other form related elements:</p>
+             <ul>
+                <li><code>&lt;fieldset&gt;</code>: Groups related elements in a form.</li>
+                <li><code>&lt;legend&gt;</code>: Defines a caption for the <code>&lt;fieldset&gt;</code> element.</li>
+             </ul>
+        </section>
+
+        <section id="div-and-span">
+            <h2>Div and Span</h2>
+            <p>
+                <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> are important container elements used for grouping and styling other HTML elements.
+            </p>
+            <ul>
+                <li><code>&lt;div&gt;</code> (division): A block-level element used to group other HTML elements.  It creates a line break before and after the div.  It's commonly used for layout purposes.</li>
+                <li><code>&lt;span&gt;</code>: An inline element used to group inline elements. It does not create line breaks.It's often used to style specific parts of text.</li>
+            </ul>
+            <pre><code>
+&lt;div style="background-color:lightblue; padding:20px; border-radius: 8px;"&gt;
+  &lt;p&gt;This is a div element.  It acts as a container for other elements.  You can apply styles to the div using CSS.&lt;/p&gt;
+  &lt;span style="color:red; font-weight:bold;"&gt;This is a span element&lt;/span&gt; inside the div.  It allows you to style specific parts of the text without creating a new block.&lt;br&gt;
+  &lt;span style="font-size: 1.2em;"&gt;Another span element&lt;/span&gt; with different styling.
+&lt;/div&gt;
+            </code></pre>
+        </section>
+
+        <section id="semantic-html">
+            <h2>Semantic HTML</h2>
+            <p>
+                Semantic HTML uses tags to convey the meaning of the content, not just its appearance.  This improves accessibility, SEO, and makes the code more readable and maintainable.
+            </p>
+            <p>Examples of semantic elements:</p>
+            <ul>
+                <li><code>&lt;header&gt;</code>:  A header for a document or section.  It typically contains the main heading, logo, and navigation.</li>
+                <li><code>&lt;nav&gt;</code>:  Navigation links.</li>
+                <li><code>&lt;main&gt;</code>:  The main content of a document.</li>
+                <li><code>&lt;article&gt;</code>:  An independent, self-contained piece of content, such as a blog post or news article.</li>
+                <li><code>&lt;section&gt;</code>:  A thematic grouping of content within a document.</li>
+                <li><code>&lt;aside&gt;</code>:  Content related to the main content, but not essential to it, such as a sidebar.</li>
+                <li><code>&lt;footer&gt;</code>:  A footer for a document or section.  It typically contains copyright information, contact information, and links to related documents.</li>
+            </ul>
+            <pre><code>
+&lt;header&gt;
+  &lt;h1&gt;My Website&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;This is the content of the article.  It's a self-contained piece of content.&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Section Heading&lt;/h2&gt;
+    &lt;p&gt;Content of the section.  This section groups related content.&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;aside&gt;
+    &lt;p&gt;This is a sidebar with related information.&lt;/p&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;&copy; 2025 My Website | &lt;a href="/privacy"&gt;Privacy Policy&lt;/a&gt; | &lt;a href="/terms"&gt;Terms of Service&lt;/a&gt;&lt;/p&gt;
+&lt;/footer&gt;
+            </code></pre>
+        </section>
+         <section id="media">
+            <h2>Embedding Media</h2>
+            <p>You can embed various media in your HTML pages.</p>
+            <h3>Images (covered before)</h3>
+            <p>
+                The <code>&lt;img&gt;</code> tag is used to embed images.
+            </p>
+             <h3>Audio</h3>
+            <p>
+                The <code>&lt;audio&gt;</code> tag is used to embed audio content.
+            </p>
+            <pre><code>
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;
+            </code></pre>
+             <h3>Video</h3>
+            <p>
+                The <code>&lt;video&gt;</code> tag is used to embed video content.
+            </p>
+            <pre><code>
+&lt;video controls width="640" height="360"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Your browser does not support the video element.
+&lt;/video&gt;
+            </code></pre>
+             <h3>Embedding YouTube Videos</h3>
+             <p>
+                You can also embed videos from platforms like YouTube using an <code>&lt;iframe&gt;</code>.
+             </p>
+             <pre><code>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=dZ2AwhNjQ_IlqBJd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             </code></pre>
+        </section>
+    </main>
+    <footer>
+    <p>Thank you for reading the HTML tutorial!</p>
+    <p>Made with 💻 by © NEXH Tech 2025</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive JavaScript Tutorial</title>
+    <link rel="icon" type="image/jpeg" href="https://tribe-s3-production.imgix.net/NvYDBzbtOISYE3sY4cD1d?auto=compress,format&dl">
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+        }
+        .note {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border: 1px solid #ffeeba;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .example {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        nav {
+      background: #1a237e;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    footer {
+    text-align: center;
+    background-color: #4b5563;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+    </style>
+</head>
+<body>
+    <nav>
+    <a href="Overview Homepage.html">Home</a>
+    <a href="HTML Overview.html">HTML</a>
+    <a href="CSS Overview.html">CSS</a>
+    <a href="Javascript Overview.html">JavaScript</a>
+  </nav>
+    <h1>Comprehensive JavaScript Tutorial</h1>
+
+    <p class="note">This tutorial provides a comprehensive introduction to JavaScript, covering fundamental concepts to more advanced topics. You can run the JavaScript code snippets directly in your browser's developer console (usually opened by pressing F12).</p>
+
+    <h2>1. Introduction to JavaScript</h2>
+    <p>JavaScript is a high-level, interpreted programming language that is primarily used to make web pages interactive. It is one of the three core technologies of the World Wide Web, alongside HTML and CSS.</p>
+
+    <h2>2. Setting Up</h2>
+    <p>You don't need any special software to start with JavaScript. You can write and run JavaScript code directly in your web browser's developer console or by embedding it within HTML <code>&lt;script&gt;</code> tags.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p id="demo"&gt;&lt;/p&gt;
+
+    &lt;script&gt;
+        document.getElementById("demo").innerHTML = "JavaScript is running!";
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <h2>3. Basic Syntax</h2>
+    <p>JavaScript syntax is similar to many other programming languages. Here are some fundamental elements:</p>
+    <ul>
+        <li><b>Statements:</b> Instructions that perform an action, usually ending with a semicolon (;).</li>
+        <li><b>Variables:</b> Used to store data values. Declared using <code>var</code>, <code>let</code>, or <code>const</code>.</li>
+        <li><b>Operators:</b> Symbols used to perform operations on values (e.g., +, -, *, /, =).</li>
+        <li><b>Comments:</b> Used to explain code. Single-line comments start with <code>//</code>, and multi-line comments are enclosed in <code>/* ... */</code>.</li>
+    </ul>
+    <pre><code>// This is a single-line comment
+/*
+This is a
+multi-line comment
+*/
+
+let message = "Hello"; // Declare a variable using 'let'
+const PI = 3.14159;   // Declare a constant using 'const'
+var oldVariable = "This is older syntax"; // Declare a variable using 'var' (less common now)
+
+let sum = 5 + 3; // Addition operator
+let product = 5 * 3; // Multiplication operator
+</code></pre>
+
+    <h2>4. Variables</h2>
+    <p>Variables are containers for storing data. JavaScript has three keywords for declaring variables:</p>
+    <ul>
+        <li><code>var</code>: Older way to declare variables. Has function scope.</li>
+        <li><code>let</code>: Introduced in ES6 (ECMAScript 2015). Has block scope. Recommended for most cases.</li>
+        <li><code>const</code>: Also introduced in ES6. Used for variables whose values should not be reassigned. Also has block scope.</li>
+    </ul>
+    <pre><code>let name = "John Doe";
+let age = 30;
+const isStudent = false;
+
+name = "Jane Doe"; // You can reassign 'let' variables
+// isStudent = true; // This would cause an error because 'const' variables cannot be reassigned
+
+if (true) {
+    let blockScopedVar = "I'm inside the block";
+    var functionScopedVar = "I'm function scoped";
+    console.log(blockScopedVar); // Accessible here
+}
+// console.log(blockScopedVar); // Not accessible here (block scope)
+console.log(functionScopedVar); // Accessible here (function scope)
+</code></pre>
+
+    <h2>5. Data Types</h2>
+    <p>JavaScript has several built-in data types:</p>
+    <ul>
+        <li><b>Primitive Data Types:</b>
+            <ul>
+                <li><code>String</code>: Represents textual data (e.g., "Hello").</li>
+                <li><code>Number</code>: Represents numeric data (integers and floating-point numbers, e.g., 10, 3.14).</li>
+                <li><code>Boolean</code>: Represents logical values (<code>true</code> or <code>false</code>).</li>
+                <li><code>Null</code>: Represents the intentional absence of a value.</li>
+                <li><code>Undefined</code>: Represents a variable that has been declared but has not been assigned a value.</li>
+                <li><code>Symbol</code> (ES6): Represents a unique identifier.</li>
+                <li><code>BigInt</code> (ES2020): Represents integers of arbitrary length.</li>
+            </ul>
+        </li>
+        <li><b>Object Data Type:</b>
+            <ul>
+                <li><code>Object</code>: A collection of key-value pairs.</li>
+                <li><code>Array</code>: An ordered list of values.</li>
+                <li><code>Function</code>: A block of code designed to perform a particular task.</li>
+                <li><code>Date</code>: Represents a specific point in time.</li>
+                <li>And more...</li>
+            </ul>
+        </li>
+    </ul>
+    <pre><code>let myString = "This is a string";
+let myNumber = 10;
+let myFloat = 3.14;
+let myBoolean = true;
+let myNull = null;
+let myUndefined; // Automatically becomes undefined
+
+let myObject = { name: "Alice", age: 25 };
+let myArray = [1, 2, 3, "four"];
+function myFunction() {
+    console.log("Hello from the function!");
+}
+let myDate = new Date();
+
+console.log(typeof myString);   // Output: string
+console.log(typeof myNumber);   // Output: number
+console.log(typeof myBoolean);  // Output: boolean
+console.log(typeof myNull);     // Output: object (historical quirk)
+console.log(typeof myUndefined);// Output: undefined
+console.log(typeof myObject);  // Output: object
+console.log(typeof myArray);   // Output: object
+console.log(typeof myFunction);// Output: function
+</code></pre>
+
+    <h2>6. Operators</h2>
+    <p>JavaScript operators are symbols that perform operations on operands (values and variables).</p>
+    <ul>
+        <li><b>Arithmetic Operators:</b> <code>+</code> (addition), <code>-</code> (subtraction), <code>*</code> (multiplication), <code>/</code> (division), <code>%</code> (modulus), <code>**</code> (exponentiation), <code>++</code> (increment), <code>--</code> (decrement).</li>
+        <li><b>Assignment Operators:</b> <code>=</code> (assign), <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>**=</code>.</li>
+        <li><b>Comparison Operators:</b> <code>==</code> (equal to), <code>===</code> (strict equal to), <code>!=</code> (not equal to), <code>!==</code> (strict not equal to), <code>&gt;</code> (greater than), <code>&lt;</code> (less than), <code>&gt;=</code> (greater than or equal to), <code>&lt;=</code> (less than or equal to).</li>
+        <li><b>Logical Operators:</b> <code>&&</code> (logical AND), <code>||</code> (logical OR), <code>!</code> (logical NOT).</li>
+    </ul>
+    <pre><code>let a = 10;
+let b = 5;
+
+console.log(a + b);   // Output: 15
+console.log(a - b);   // Output: 5
+console.log(a * b);   // Output: 50
+console.log(a / b);   // Output: 2
+console.log(a % b);   // Output: 0
+console.log(a ** 2);  // Output: 100
+
+let c = 7;
+c += 3; // c is now 10
+
+console.log(a == b);  // Output: false (checks only value)
+console.log(a === "10"); // Output: false (checks value and type)
+console.log(a != b);  // Output: true
+console.log(a !== "10");// Output: true
+
+let x = true;
+let y = false;
+
+console.log(x && y);  // Output: false
+console.log(x || y);  // Output: true
+console.log(!x);      // Output: false
+</code></pre>
+
+    <h2>7. Control Flow</h2>
+    <p>Control flow statements determine the order in which code is executed.</p>
+    <ul>
+        <li><b><code>if</code>, <code>else if</code>, <code>else</code>:</b> Conditional statements.</li>
+        <li><b><code>switch</code>:</b> Selects one of many code blocks to be executed.</li>
+        <li><b><code>for</code>:</b> Loops through a block of code a number of times.</li>
+        <li><b><code>while</code>:</b> Loops through a block of code while a condition is true.</li>
+        <li><b><code>do...while</code>:</b> Similar to <code>while</code>, but the code block is executed at least once.</li>
+        <li><b><code>break</code>:</b> Exits a loop or a <code>switch</code> statement.</li>
+        <li><b><code>continue</code>:</b> Skips the current iteration of a loop and continues to the next.</li>
+    </ul>
+    <pre><code>let ageToCheck = 20;
+
+if (ageToCheck >= 18) {
+    console.log("You are an adult.");
+} else if (ageToCheck >= 13) {
+    console.log("You are a teenager.");
+} else {
+    console.log("You are a child.");
+}
+
+let day = "Monday";
+switch (day) {
+    case "Monday":
+        console.log("It's Monday!");
+        break;
+    case "Friday":
+        console.log("It's almost the weekend!");
+        break;
+    default:
+        console.log("It's another day.");
+}
+
+for (let i = 0; i < 5; i++) {
+    console.log("Loop iteration: " + i);
+}
+
+let count = 0;
+while (count < 3) {
+    console.log("While loop: " + count);
+    count++;
+}
+
+let j = 0;
+do {
+    console.log("Do...while loop: " + j);
+    j++;
+} while (j < 2);
+</code></pre>
+
+    <h2>8. Functions</h2>
+    <p>A function is a block of code designed to perform a particular task. You can define a function using the <code>function</code> keyword.</p>
+    <pre><code>function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+let greeting = greet("Alice");
+console.log(greeting); // Output: Hello, Alice!
+
+// Arrow function (ES6) - a more concise way to define functions
+const multiply = (a, b) => {
+    return a * b;
+};
+
+let productResult = multiply(4, 5);
+console.log(productResult); // Output: 20
+</code></pre>
+
+    <h2>9. Objects</h2>
+    <p>An object is a collection of key-value pairs (properties). You can create objects using object literals or constructor functions.</p>
+    <pre><code>// Object literal
+let person = {
+    name: "Bob",
+    age: 35,
+    city: "New York",
+    greet: function() {
+        console.log("Hi, my name is " + this.name);
+    }
+};
+
+console.log(person.name); // Output: Bob
+console.log(person["age"]); // Output: 35
+person.greet(); // Output: Hi, my name is Bob
+
+// Constructor function (older way, but still used)
+function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.getInfo = function() {
+        return this.make + " " + this.model + " (" + this.year + ")";
+    };
+}
+
+let myCar = new Car("Toyota", "Camry", 2022);
+console.log(myCar.getInfo()); // Output: Toyota Camry (2022)
+
+// Classes (ES6) - a more modern way to create objects
+class Animal {
+    constructor(name, sound) {
+        this.name = name;
+        this.sound = sound;
+    }
+    makeSound() {
+        console.log(this.sound);
+    }
+}
+
+let myDog = new Animal("Buddy", "Woof!");
+myDog.makeSound(); // Output: Woof!
+</code></pre>
+
+    <h2>10. Arrays</h2>
+    <p>An array is an ordered list of items (elements). Arrays in JavaScript can hold elements of different data types.</p>
+    <pre><code>let colors = ["red", "green", "blue"];
+let numbers = [1, 2, 3, 4, 5];
+let mixedArray = [1, "hello", true, null];
+
+console.log(colors[0]); // Output: red (arrays are zero-indexed)
+console.log(numbers.length); // Output: 5 (number of elements)
+
+colors.push("yellow"); // Add an element to the end
+console.log(colors); // Output: ["red", "green", "blue", "yellow"]
+
+colors.pop(); // Remove the last element
+console.log(colors); // Output: ["red", "green", "blue"]
+
+// Iterating through an array
+for (let i = 0; i < numbers.length; i++) {
+    console.log(numbers[i]);
+}
+
+// Using for...of loop (ES6)
+for (let color of colors) {
+    console.log(color);
+}
+
+// Array methods
+let doubledNumbers = numbers.map(function(number) {
+    return number * 2;
+});
+console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+
+let evenNumbers = numbers.filter(function(number) {
+    return number % 2 === 0;
+});
+console.log(evenNumbers); // Output: [2, 4]
+</code></pre>
+
+    <h2>11. The Document Object Model (DOM)</h2>
+    <p>The DOM is a programming interface for web documents. It represents the page structure as a tree of objects. JavaScript can interact with the DOM to dynamically change the content, structure, and style of a web page.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;DOM Manipulation&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id="main-heading"&gt;Hello DOM!&lt;/h1&gt;
+    &lt;p class="paragraph"&gt;This is the first paragraph.&lt;/p&gt;
+    &lt;p class="paragraph"&gt;This is the second paragraph.&lt;/p&gt;
+    &lt;button onclick="changeHeading()"&gt;Change Heading&lt;/button&gt;
+    &lt;div id="myDiv" style="border:1px solid black; padding: 10px; margin-top: 10px;"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        // Get an element by its ID
+        const heading = document.getElementById("main-heading");
+        console.log(heading.textContent); // Output: Hello DOM!
+
+        // Get elements by their class name
+        const paragraphs = document.getElementsByClassName("paragraph");
+        console.log(paragraphs.length); // Output: 2
+        paragraphs[0].textContent = "Paragraph 1 changed!";
+
+        // Change the heading text when the button is clicked.
+        function changeHeading() {
+            heading.textContent = "Heading Changed!";
+        }
+
+        // Create a new element
+        const newParagraph = document.createElement("p");
+        newParagraph.textContent = "This is a new paragraph added by JavaScript.";
+
+        // Append the new element to the body or another element
+        document.body.appendChild(newParagraph);
+
+        //Access element style
+        const myDiv = document.getElementById("myDiv");
+        myDiv.style.backgroundColor = "#f0f0f0";
+        myDiv.style.fontWeight = "bold";
+        myDiv.innerHTML = "&lt;p&gt;This is some text inside the div&lt;/p&gt;";
+
+        // Remove an element
+        // document.body.removeChild(newParagraph);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <h2>12. Events</h2>
+    <p>Events are actions or occurrences that happen in the browser, such as a user clicking a button, moving the mouse, or a page finishing loading.  JavaScript can "listen" for these events and execute code in response.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Events in JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button id="myButton"&gt;Click Me&lt;/button&gt;
+    &lt;input type="text" id="myInput" placeholder="Type something"&gt;
+    &lt;p id="output"&gt;&lt;/p&gt;
+
+    &lt;script&gt;
+        // Method 1: Using the onclick attribute (in HTML) - see button in html
+
+        // Method 2: Using addEventListener()
+        const button = document.getElementById("myButton");
+        button.addEventListener("click", function() {
+            console.log("Button clicked!");
+            alert("Button clicked!");
+        });
+
+        const inputField = document.getElementById("myInput");
+        inputField.addEventListener("input", function() {
+            const inputValue = inputField.value;
+            console.log("Input value: " + inputValue);
+            document.getElementById("output").textContent = "You typed: " + inputValue;
+        });
+
+        // Other common events:
+        // mouseover, mouseout, keydown, keyup, submit, load, etc.
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <h2>13.  Asynchronous JavaScript and Callbacks</h2>
+    <p>JavaScript is single-threaded, meaning it executes code one line at a time.  Asynchronous operations allow you to perform long-running tasks without blocking the main thread, ensuring the user interface remains responsive.  Callbacks are a way to handle the results of asynchronous operations.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Async JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="output"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        // Example 1: setTimeout()
+        console.log("Before setTimeout");
+        setTimeout(function() {
+            console.log("Inside setTimeout (after 2 seconds)");
+            document.getElementById("output").textContent = "Delayed message!";
+        }, 2000); // 2000 milliseconds = 2 seconds
+        console.log("After setTimeout");
+        //output:
+        // Before setTimeout
+        // After setTimeout
+        // Inside setTimeout (after 2 seconds)
+
+
+        // Example 2:  Callback function with setTimeout
+        function fetchData(callback) {
+            setTimeout(function() {
+                const data = { name: "John", age: 30 };
+                callback(data); // Call the callback function with the data
+            }, 1500);
+        }
+
+        fetchData(function(result) {
+            console.log("Data received:", result);
+            document.getElementById("output").textContent += "&lt;br&gt;Data received: " + result.name + ", " + result.age;
+        });
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <h2>14. Promises</h2>
+    <p>Promises are a more modern way to handle asynchronous operations in JavaScript.  They provide a cleaner syntax and better error handling compared to callbacks.  A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Promises in JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="output"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        // Creating a Promise
+        const myPromise = new Promise(function(resolve, reject) {
+            // Simulate an asynchronous operation (e.g., fetching data)
+            setTimeout(function() {
+                const success = true; // Or false
+                if (success) {
+                    resolve({ message: "Operation succeeded!", data: [1, 2, 3] }); // Resolve with a value
+                } else {
+                    reject("Operation failed!"); // Reject with a reason
+                }
+            }, 2000);
+        });
+
+        // Consuming the Promise
+        myPromise
+            .then(function(result) {
+                console.log("Result:", result);
+                document.getElementById("output").textContent = result.message + "&lt;br&gt;Data: " + result.data.join(", ");
+            })
+            .catch(function(error) {
+                console.error("Error:", error);
+                document.getElementById("output").textContent += "&lt;br&gt;Error: " + error;
+            });
+
+        // Promise.resolve and Promise.reject
+        const resolvedPromise = Promise.resolve("Already resolved!");
+        resolvedPromise.then(value => console.log(value));  //Output: Already resolved!
+
+        const rejectedPromise = Promise.reject("Rejected immediately!");
+        rejectedPromise.catch(error => console.error(error)); // Output: Rejected immediately!
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <h2>15. Async/Await</h2>
+    <p><code>async</code> and <code>await</code> are syntactic sugar built on top of Promises, making asynchronous code even easier to write and read.  The <code>async</code> keyword is used to define an asynchronous function, and the <code>await</code> keyword is used to pause the execution of that function until a Promise is resolved.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Async/Await in JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="output"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        // Function that returns a Promise (simulates fetching data)
+        function fetchData() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve({ name: "Alice", age: 28 });
+                }, 1500);
+            });
+        }
+
+        // Using async/await
+        async function getData() {
+            try {
+                console.log("Start fetching data...");
+                document.getElementById("output").textContent = "Start fetching data...";
+                const result = await fetchData(); // Wait for the Promise to resolve
+                console.log("Data received:", result);
+                document.getElementById("output").textContent += "&lt;br&gt;Data received: " + result.name + ", " + result.age;
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("output").textContent += "&lt;br&gt;Error: " + error;
+            } finally {
+                console.log("Fetch operation completed.");
+document.getElementById("output").textContent += "&lt;br&gt;Fetch operation completed.";
+            }
+        }
+
+        // Call the async function
+        getData();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <h2>16. Error Handling</h2>
+    <p>Error handling is crucial for writing robust JavaScript code.  You can use <code>try...catch...finally</code> blocks to handle exceptions (errors) that may occur during the execution of your code.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Error Handling in JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="output"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        function divide(a, b) {
+            if (b === 0) {
+                throw new Error("Division by zero is not allowed."); // Throw an error
+            }
+            return a / b;
+        }
+
+        try {
+            let result1 = divide(10, 2);
+            console.log("Result 1:", result1); // Output: 5
+            document.getElementById("output").textContent = "Result 1: " + result1;
+
+            let result2 = divide(5, 0); // This will throw an error
+            console.log("Result 2:", result2); // This line will not be reached
+            document.getElementById("output").textContent += "&lt;br&gt;Result 2: " + result2;
+
+        } catch (error) {
+            console.error("An error occurred:", error.message); // Catch the error and handle it
+            document.getElementById("output").textContent += "&lt;br&gt;Error: " + error.message;
+        } finally {
+            console.log("Finally block executed."); // This block always executes, regardless of whether an error occurred
+            document.getElementById("output").textContent += "&lt;br&gt;Finally block executed.";
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <h2>17. Modules</h2>
+    <p>JavaScript modules allow you to split your code into separate files, making it more organized and maintainable.  You can use <code>import</code> and <code>export</code> statements to share code between modules.</p>
+    <p class="note">To run this example, you'll need a server (like Node.js) or a bundler (like Webpack) to handle the module syntax.  Browsers don't fully support modules without these tools in simple file setups.</p>
+    <pre><code>
+        // math.js (Create this file separately)
+        export const add = (a, b) => a + b;
+        export const subtract = (a, b) => a - b;
+
+        // main.js (Create this file separately)
+        import { add, subtract } from './math.js';  // Corrected import path
+        console.log(add(5, 3));       // Output: 8
+        console.log(subtract(10, 4));  // Output: 6
+    </code></pre>
+    <p><strong>Explanation and how to run with a simple server (Node.js):</strong></p>
+    <ol>
+        <li><strong>Create Files:</strong> Create two files: <code>math.js</code> and <code>main.js</code>, and copy the code above into them.  Make sure they are in the same directory.</li>
+        <li><strong>Install Node.js:</strong> If you don't have it, download and install Node.js from <a href="https://nodejs.org/" target="_blank">nodejs.org</a>.</li>
+        <li><strong>Create package.json:</strong> In the directory containing your files, open a terminal and run <code>npm init -y</code>.  This creates a <code>package.json</code> file.</li>
+        <li><strong>Install a simple server (http-server):</strong> In the same terminal, run  <code>npm install http-server -g</code></li>
+        <li><strong>Run the server:</strong> In the same terminal, run <code>npx http-server -p 8000</code>.  This will start a simple web server.</li>
+        <li><strong>Create an HTML file:</strong> Create an <code>index.html</code> file in the same directory:
+        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Modules Example&lt;/title&gt;
+    &lt;script src="main.js" type="module"&gt;&lt;/script&gt; &lt;!-- Important: type="module" --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="output"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+        </li>
+        <li><strong>Open in Browser:</strong> Open your browser and go to <code>http://localhost:8000</code>.  You should see the output from <code>main.js</code> in the console.</li>
+    </ol>
+
+    <h2>18. Classes</h2>
+<p>Classes in JavaScript provide a more structured way to create objects. They are syntactic sugar over JavaScript's prototype-based inheritance.</p>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Classes in JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="output"&gt;&lt;/div&gt;
+  &lt;script&gt;
+    // Basic class definition
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      greet() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+        document.getElementById("output").innerHTML += `Hello, my name is ${this.name} and I am ${this.age} years old.&lt;br&gt;`;
+      }
+    }
+
+    // Creating instances
+    let person1 = new Person("John", 30);
+    person1.greet();
+
+    let person2 = new Person("Jane", 25);
+    person2.greet();
+
+    // Inheritance
+    class Student extends Person {
+      constructor(name, age, major) {
+        super(name, age);
+        this.major = major;
+      }
+
+      study() {
+        console.log(`${this.name} is studying ${this.major}.`);
+        document.getElementById("output").innerHTML += `${this.name} is studying ${this.major}.&lt;br&gt;`;
+      }
+
+      greet() {
+        console.log(`Hello, I am ${this.name}, a student of ${this.major}.`);
+        document.getElementById("output").innerHTML += `Hello, I am ${this.name}, a student of ${this.major}.&lt;br&gt;`;
+      }
+    }
+
+    let student1 = new Student("Alice", 20, "Computer Science");
+    student1.greet();
+    student1.study();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>19. JSON</h2>
+<p>JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate.</p>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;JSON in JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="output"&gt;&lt;/div&gt;
+  &lt;script&gt;
+    let myObject = {
+      name: "John",
+      age: 30,
+      city: "New York"
+    };
+
+    let jsonString = JSON.stringify(myObject);
+    console.log("JSON String:", jsonString);
+    document.getElementById("output").innerHTML = "JSON String: " + jsonString + "&lt;br&gt;";
+
+    let parsedObject = JSON.parse(jsonString);
+    console.log("Parsed Object:", parsedObject);
+    document.getElementById("output").innerHTML += "Parsed Object: &lt;br&gt;";
+    for (const key in parsedObject) {
+      document.getElementById("output").innerHTML += key + ":" + parsedObject[key] + "&lt;br&gt;";
+    }
+
+    let jsonArrayString = '[{"name":"John","age":30}, {"name":"Jane","age":25}]';
+    let parsedArray = JSON.parse(jsonArrayString);
+    console.log("Parsed Array:", parsedArray);
+    document.getElementById("output").innerHTML += "Parsed Array: &lt;br&gt;";
+    parsedArray.forEach(item =&gt; {
+      document.getElementById("output").innerHTML += item.name + " is " + item.age + "&lt;br&gt;";
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>20. Fetch API</h2>
+<p>The Fetch API provides a modern, flexible interface for making HTTP requests. It can be used to retrieve data from a server, send data to a server, and more. It uses Promises to handle asynchronous operations.</p>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Fetch API in JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="output" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;"&gt;&lt;/div&gt;
+  &lt;div id="postOutput" style="border: 1px solid #ccc; padding: 10px;"&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    const outputDiv = document.getElementById('output');
+    const postOutputDiv = document.getElementById('postOutput');
+
+    // Example 1: GET request
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response =&gt; {
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        return response.json();
+      })
+      .then(data =&gt; {
+        console.log('GET Response:', data);
+        outputDiv.innerHTML += `&lt;p&gt;&lt;b&gt;GET Response:&lt;/b&gt; Title: ${data.title}, Completed: ${data.completed}&lt;/p&gt;`;
+      })
+      .catch(error =&gt; {
+        console.error('GET Error:', error);
+        outputDiv.innerHTML += `&lt;p style="color:red;"&gt;&lt;b&gt;GET Error:&lt;/b&gt; ${error}&lt;/p&gt;`;
+      });
+
+    // Example 2: POST request
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+      body: JSON.stringify({
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+      }),
+    })
+      .then(response =&gt; {
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        return response.json();
+      })
+      .then(data =&gt; {
+        console.log('POST Response:', data);
+        postOutputDiv.innerHTML += `&lt;p&gt;&lt;b&gt;POST Response:&lt;/b&gt; ID: ${data.id}, Title: ${data.title}&lt;/p&gt;`;
+      })
+      .catch(error =&gt; {
+        console.error('POST Error:', error);
+        postOutputDiv.innerHTML += `&lt;p style="color:red;"&gt;&lt;b&gt;POST Error:&lt;/b&gt; ${error}&lt;/p&gt;`;
+      });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <p>Note:  The API endpoints used in the examples are from  <a href="https://jsonplaceholder.typicode.com/" target="_blank">jsonplaceholder.typicode.com</a>, a free online REST API for testing and prototyping.</p>
+
+    <h2>21. WebSockets</h2>
+    <p>
+        WebSockets provide a way to establish a persistent, bidirectional, and low-latency communication channel between a client and a server.  This enables real-time applications, such as chat, online games, and live data dashboards.
+    </p>
+    <p class="note">
+        This example requires a WebSocket server.  You can use a Node.js library like <code>ws</code> to create one.  The client-side code can run in any browser that supports WebSockets.
+    </p>
+
+    <pre><code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        
+            <title>WebSocket Example</title>
+        
+        <body>
+            &lt;div id="output" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; height: 200px; overflow-y: auto;"&gt;&lt;/div&gt;
+            &lt;input type="text" id="messageInput" placeholder="Enter message"&gt;
+            &lt;button id="sendButton"&gt;Send&lt;/button&gt;
+
+            &lt;script&gt;
+                const outputDiv = document.getElementById('output');
+                const messageInput = document.getElementById('messageInput');
+                const sendButton = document.getElementById('sendButton');
+
+                // 1. Create a WebSocket connection
+                //    Replace 'ws://localhost:8080' with your WebSocket server URL
+                const socket = new WebSocket('ws://localhost:8080');
+
+                // 2.  Handle the connection open event
+                socket.addEventListener('open', (event) => {
+                    console.log('WebSocket connection opened:', event);
+                    outputDiv.innerHTML += '&lt;p&gt;&lt;b&gt;[Connected]&lt;/b&gt; Connection established!&lt;/p&gt;';
+                    // Send a message to the server after the connection is opened
+                    socket.send('Hello Server!');
+                });
+
+                // 3. Handle incoming messages from the server
+                socket.addEventListener('message', (event) => {
+                    console.log('Received message:', event.data);
+                    outputDiv.innerHTML += `&lt;p&gt;&lt;b&gt;Server:&lt;/b&gt; ${event.data}&lt;/p&gt;`;
+                });
+
+                // 4. Handle the connection close event
+                socket.addEventListener('close', (event) => {
+                    console.log('WebSocket connection closed:', event);
+                    outputDiv.innerHTML += '&lt;p&gt;&lt;b&gt;[Disconnected]&lt;/b&gt; Connection closed.&lt;/p&gt;';
+                });
+
+                // 5. Handle errors
+                socket.addEventListener('error', (event) => {
+                    console.error('WebSocket error:', event);
+                    outputDiv.innerHTML += `&lt;p style="color:red;"&gt;&lt;b&gt;[Error]&lt;/b&gt; An error occurred: ${event.message}&lt;/p&gt;`;
+                });
+
+                // 6. Send a message when the send button is clicked
+                sendButton.addEventListener('click', () => {
+                    const message = messageInput.value;
+                    if (message.trim() !== '') {
+                        console.log('Sending message:', message);
+                        outputDiv.innerHTML += `&lt;p&gt;&lt;b&gt;Client:&lt;/b&gt; ${message}&lt;/p&gt;`;
+                        socket.send(message); // Send the message to the server
+                        messageInput.value = ''; // Clear the input field
+                    }
+                });
+            </script>
+        </body>
+        </html>
+    </code></pre>
+    <p>
+        To make this example work, you would need a WebSocket server running at <code>ws://localhost:8080</code>.  Here's a simple Node.js WebSocket server using the <code>ws</code> library:
+    </p>
+    <pre><code>
+        // server.js (Node.js)
+        const WebSocket = require('ws');
+
+        const wss = new WebSocket.Server({ port: 8080 });
+
+        wss.on('connection', (ws) => {
+            console.log('Server: Client connected');
+
+            // Send a message to the client upon connection
+            ws.send('Welcome to the WebSocket server!');
+
+            // Handle messages from the client
+            ws.on('message', (message) => {
+                console.log('Server received:', message);
+
+                // Echo the message back to the client
+                ws.send(`Server received: ${message}`);
+            });
+
+            // Handle the client disconnecting
+            ws.on('close', () => {
+                console.log('Server: Client disconnected');
+            });
+
+            //Handle errors
+            ws.on('error', (error)=>{
+                console.error('Server: error', error);
+            })
+        });
+
+        console.log('WebSocket server is running on port 8080');
+    </code></pre>
+    <p>
+        To run the server:
+    </p>
+    <ol>
+        <li><strong>Install Node.js:</strong> If you don't have it, download and install Node.js from <a href="https://nodejs.org/" target="_blank">nodejs.org</a>.</li>
+        <li><strong>Create server.js:</strong> Create a file named <code>server.js</code> and paste the server-side code into it.</li>
+        <li><strong>Install the ws library:</strong> In the terminal, in the same directory as <code>server.js</code>, run <code>npm install ws</code>.</li>
+        <li><strong>Run the server:</strong> In the terminal, run <code>node server.js</code>.  You should see the message "WebSocket server is running on port 8080".</li>
+        <li><strong>Create the HTML file:</strong> Create an HTML file (e.g., <code>index.html</code>) and paste the client-side code into it.  Open this file in your browser.</li>
+        <li><strong>Interact:</strong>  Type a message in the input field and click "Send".  You should see the message sent to the server and the server's response in the output area.</li>
+    </ol>
+    <footer>
+    <p>Thank you for reading the Javascript Tutorial</p>
+    <p>Made with 💻 by © NEXH Tech 2025</p>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Tutorial</title>
+  <link rel="icon" type="image/jpeg" href="https://tribe-s3-production.imgix.net/NvYDBzbtOISYE3sY4cD1d?auto=compress,format&dl">
+  <style>
+    /* Reset & Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e9edf1;
+    color: #030507;
+    padding: 20px;
+    line-height: 1.7;
+}
+h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ul{
+  font-size: medium;
+  color: #0b444e;
+}
+p{
+  color: #262c33;
+}
+/* Header */
+header {
+    background-color: #1f2937;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Main Section */
+main section {
+    margin-bottom: 50px;
+    padding: 0 10px;
+}
+
+/* Images Gallery */
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: 31.5pc;
+}
+
+.images img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+nav {
+      background: #1a237e;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #4b5563;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<nav>
+    <a href="Overview Homepage.html">Home</a>
+    <a href="HTML Overview.html">HTML</a>
+    <a href="CSS Overview.html">CSS</a>
+    <a href="Javascript Overview.html">JavaScript</a>
+  </nav>
+  <h1>Learning CSS</h1>
+
+  <p>
+    Welcome to the world of CSS! CSS, or Cascading Style Sheets, is the language used to style HTML elements.
+    Think of it as the "makeup artist" for your website.  While HTML provides the structure and content,
+    CSS adds the visual flair – the colors, fonts, layouts, and all the other stylistic details that make a
+    website look appealing.  It controls how the HTML elements are displayed in different media (screen,
+    print, etc.).
+  </p>
+<hr>
+  <h2>Applying CSS to HTML</h2>
+
+  <p>There are three main ways to apply CSS to your HTML:</p>
+
+  <ol>
+    <li><strong>Inline Styles:</strong> Applying styles directly within HTML elements using the <code>style</code> attribute.</li>
+    <li><strong>Internal Style Sheets:</strong> Embedding CSS within the <code>&lt;head&gt;</code> section of your HTML document using the <code>&lt;style&gt;</code> tags.</li>
+    <li><strong>External Style Sheets:</strong> Creating separate <code>.css</code> files and linking them to your HTML document using the <code>&lt;link&gt;</code> tag.</li>
+  </ol>
+<hr>
+  <h3>Inline Styles Example</h3>
+  <p>
+    This is the most direct way to style individual HTML elements. You use the <code>style</code> attribute
+    directly within an HTML tag and then specify CSS properties and their values.  While quick for small,
+    one-off changes, it can become very messy and hard to maintain for larger projects.  It also violates the
+    principle of separation of concerns, making your HTML harder to read and debug.  Inline styles also override any styles defined in <code>&lt;style&gt;</code> tags or external stylesheets.
+  </p>
+
+  <h1 style="color: blue; text-align: center;">This is a blue heading (Inline)</h1>
+  <p style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 1.5;">
+    This is a paragraph with Arial font, a font size of 16 pixels, and a line height of 1.5 (Inline).
+  </p>
+  <p>
+    <strong>When to use inline styles:</strong>  Rarely.  Only for very specific, isolated styling that doesn't need to be reused.  For example, if you have a single element on a page that needs a unique style that will never be used elsewhere.
+  </p>
+<hr>
+  <h3>Internal Style Sheets Example</h3>
+  <p>
+    With this method, you embed CSS rules within <code>&lt;style&gt;</code> tags inside the <code>&lt;head&gt;</code>
+    section of your HTML document. These styles will then apply to all the matching elements within that
+    HTML file.  This is better than inline styles for applying consistent styles within a single page,
+    but it's still not ideal for styling multiple pages.  Internal style sheets are useful when you have a single HTML file and want to keep the styles contained within that file.
+  </p>
+  <p>
+    In this example, we've added <code>&lt;style&gt;</code> tags within the <code>&lt;head&gt;</code>.
+    Inside the <code>&lt;style&gt;</code> tags, we've defined CSS rules.
+  </p>
+
+  <h2 style="color: green;">This is a green underlined heading (Internal)</h2>
+  <p class="special-paragraph" style="color: purple; font-style: italic;">This is a special paragraph in italics and purple (Internal).</p>
+
+  <p>
+    <strong>When to use internal style sheets:</strong> When you have a single HTML page and the styles are specific to that page.  For example, a single-page application or a quick HTML prototype.
+  </p>
+<hr>
+  <h3>External Style Sheets Example</h3>
+    <p>
+    This involves creating a separate file with a <code>.css</code> extension (e.g., <code>styles.css</code>)
+    and linking it to your HTML document using the <code>&lt;link&gt;</code> element.  This is the most
+    organized and reusable way to manage your styles.  It promotes a clean separation of concerns,
+    making your HTML and CSS code easier to read, write, and maintain.  It also allows for caching of the CSS
+    file by the browser, improving page load times.  External style sheets are the standard approach for styling websites.
+  </p>
+
+  <p>
+    The <code>&lt;link&gt;</code> tag goes in the <code>&lt;head&gt;</code> of your HTML:
+    <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+  </p>
+
+  <p>
+    Any CSS rules defined in <code>styles.css</code> will then apply to your HTML. For example, you could create a "styles.css" file with the following content:
+  </p>
+  <pre><code>
+/* styles.css */
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+}
+  </code></pre>
+
+  <p>
+  This is the most common way to style web pages.  It allows you to keep your HTML structure separate from your CSS styling, making your code easier to manage and update.  You can change the look of your entire website by editing a single CSS file!
+  </p>
+    <p>
+    <strong>When to use external style sheets:</strong>  For virtually all websites and web applications.  This is the recommended approach for any project with more than a few HTML pages, or when you want to reuse styles across multiple pages.
+  </p>
+<hr>
+  <h2>CSS Selectors</h2>
+  <p>
+    CSS selectors are used to target the specific HTML elements you want to style.  We've already seen some basic selectors. Here's a more detailed look:
+  </p>
+  <ul>
+    <li><strong>Element Selectors (Type Selectors):</strong>  Select elements based on their tag name (e.g., <code>p</code>, <code>h1</code>, <code>body</code>).  For example, <code>p { ... }</code> styles all paragraph elements.</li>
+    <li><strong>Class Selectors:</strong> Select elements with a specific class attribute (e.g., <code>.special-paragraph</code>).  You can apply the same style to multiple elements.  For example, <code>.my-class { ... }</code> styles all elements with the class "my-class".</li>
+    <li><strong>ID Selectors:</strong> Select a specific element with a unique ID attribute (e.g., <code>#my-unique-element</code>).  IDs should be unique within a page.  For example, <code>#header { ... }</code> styles the element with the ID "header".</li>
+    <li><strong>Universal Selector:</strong> Selects all elements (e.g., <code>* { ... }</code>).  Often used for resetting default styles.</li>
+    <li><strong>Attribute Selectors:</strong> Select elements based on their attributes or attribute values (e.g., <code>a[href]</code>, <code>input[type="text"]</code>).</li>
+    <li><strong>Pseudo-classes:</strong> Select elements based on their state or position (e.g., <code>a:hover</code>, <code>:first-child</code>).</li>
+    <li><strong>Pseudo-elements:</strong>  Create virtual elements to style specific parts of an element (e.g., <code>p::first-letter</code>, <code>div::before</code>).</li>
+    <li><strong>Combinators:</strong> Define relationships between selectors (e.g., descendant selector, child selector, adjacent sibling selector, general sibling selector).</li>
+  </ul>
+<hr>
+  <h3>Example of Selectors</h3>
+  <p>Here's how you might use these selectors in your CSS:</p>
+  <pre><code>
+/* styles.css */
+body {
+  font-family: sans-serif;  /* Element Selector */
+}
+
+h1 {
+  color: #333;           /* Element Selector */
+}
+
+.special-paragraph {
+  font-style: italic;    /* Class Selector */
+}
+
+#my-unique-element {
+  font-size: 24px;      /* ID Selector */
+}
+
+* {
+  box-sizing: border-box; /* Universal Selector */
+}
+
+a[href] {
+  color: #0078d7;       /* Attribute Selector */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;  /* Pseudo-class */
+}
+
+p::first-letter {
+  font-size: 150%;        /* Pseudo-element */
+  font-weight: bold;
+}
+
+div p {
+  color: green;          /* Descendant Selector */
+}
+
+ul > li {
+  list-style-type: square; /* Child Selector */
+}
+  </code></pre>
+  <hr>
+    <h4>More on Selectors</h4>
+    <p>
+        Let's dig deeper into some of the more advanced selectors:
+    </p>
+    <h5>Attribute Selectors</h5>
+    <p>
+        Attribute selectors allow you to target elements based on the presence or value of their attributes.
+    </p>
+    <ul>
+        <li><code>[attribute]</code>: Selects elements that have the specified attribute.  For example, <code>a[href]</code> selects all <code>&lt;a&gt;</code> elements with a <code>href</code> attribute.</li>
+         <li><code>[attribute="value"]</code>: Selects elements with the specified attribute and value. For example, <code>input[type="text"]</code> selects all <code>&lt;input&gt;</code> elements with <code>type="text"</code>.</li>
+        <li><code>[attribute~="value"]</code>: Selects elements whose attribute value contains the specified value as part of a whitespace-separated list.  For example, <code>div[class~="warning"]</code> selects all <code>&lt;div&gt;</code> elements whose <code>class</code> attribute contains "warning" (e.g., <code>class="warning message"</code>).</li>
+        <li><code>[attribute|="value"]</code>: Selects elements whose attribute value is exactly "value" or begins with "value-" (e.g., <code>lang="en"</code> or <code>lang="en-US"</code>).</li>
+        <li><code>[attribute^="value"]</code>: Selects elements whose attribute value begins with the specified value.</li>
+        <li><code>[attribute$="value"]</code>: Selects elements whose attribute value ends with the specified value.</li>
+        <li><code>[attribute*="value"]</code>: Selects elements whose attribute value contains the specified value anywhere within the string.</li>
+    </ul>
+    <p>
+        <strong>Example:</strong>
+    </p>
+    <pre><code>
+        a[target="_blank"] {
+          color: #0078d7;
+          font-weight: bold;
+        }
+        input[type="text"] {
+          padding: 5px;
+          border: 1px solid #ccc;
+        }
+        div[class~="warning"] {
+            background-color: #fef08a;
+            border: 1px solid #fde047;
+            color: #1e293b;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+        }
+    </code></pre>
+    <pre><code>
+ &lt;a href="https://www.example.com" target="_blank"&gt;External Link&lt;/a&gt;&lt;br&gt;
+ &lt;a href="https://www.example.com"&gt;Internal Link&lt;/a&gt;&lt;br&gt;
+ &lt;input type="text" value="Enter text here"&gt;&lt;br&gt;
+ &lt;input type="password" value="password"&gt;
+ <div class="message warning">
+  Important information.
+ </div>
+    </code></pre>
+<hr>
+    <h5>Pseudo-classes</h5>
+    <p>
+        Pseudo-classes select elements based on their state or position, not based on attributes or content. They begin with a colon <code>:</code>.
+    </p>
+     <ul>
+        <li><code>:hover</code>: Selects an element when the user hovers over it.</li>
+        <li><code>:active</code>: Selects an element when it is being activated (e.g., when a button is clicked).</li>
+        <li><code>:focus</code>: Selects an element that has focus (e.g., an input field that is selected).</li>
+        <li><code>:first-child</code>: Selects the first child element of another element.</li>
+        <li><code>:last-child</code>: Selects the last child element of another element.</li>
+        <li><code>:nth-child(n)</code>: Selects the nth child element of another element (where n can be a number, keyword, or formula).</li>
+        <li><code>:nth-of-type(n)</code>: Selects the nth element of a specific type that is a child of another element.</li>
+        <li><code>:not(selector)</code>: Selects elements that do not match the specified selector.</li>
+        <li><code>:checked</code>: Selects checked checkboxes or radio buttons.</li>
+        <li><code>:disabled</code>: Selects disabled form elements.</li>
+        <li><code>:enabled</code>: Selects enabled form elements.</li>
+        <li><code>:valid</code>: selects form elements with valid values</li>
+        <li><code>:invalid</code>: selects form elements with invalid values</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+button:active {
+  background-color: #0056b3;
+}
+input:focus {
+  border-color: #0078d7;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+ul li:first-child {
+  font-weight: bold;
+}
+ul li:last-child{
+    color: green;
+}
+ul li:nth-child(2) {
+    text-decoration: underline;
+}
+    </code></pre>
+    <pre><code>
+&lt;a href="https://www.example.com"&gt;Hover over me&lt;/a&gt;&lt;br&gt;
+&lt;button&gt;Click Me&lt;/button&gt;&lt;br&gt;
+&lt;input type="text" value="Type here"&gt;&lt;br&gt;
+&lt;ul&gt;
+  &lt;li&gt;First Item&lt;/li&gt;
+  &lt;li&gt;Second Item&lt;/li&gt;
+  &lt;li&gt;Third Item&lt;/li&gt;
+&lt;/ul&gt;
+    </code></pre>
+<hr>
+    <h5>Pseudo-elements</h5>
+      <p>
+        Pseudo-elements create virtual elements to style specific parts of an element.  They begin with a double colon <code>::</code>.
+    </p>
+    <ul>
+        <li><code>::first-letter</code>: Selects the first letter of the text in an element.</li>
+        <li><code>::first-line</code>: Selects the first line of the text in an element.</li>
+        <li><code>::before</code>: Inserts content before the content of an element.</li>
+        <li><code>::after</code>: Inserts content after the content of an element.</li>
+        <li><code>::selection</code>: Applies styles to the selected portion of an element.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+p::first-letter {
+  font-size: 200%;
+  color: #0078d7;
+}
+p::first-line {
+    font-weight: bold;
+}
+div::before {
+  content: "▶";
+  color: green;
+  margin-right: 10px;
+}
+div::after{
+    content: "◀";
+    color: red;
+    margin-left: 10px;
+}
+::selection {
+  background-color: #ffeb3b;
+  color: #222;
+}
+    </code></pre>
+    <pre><code>
+&lt;p&gt;This is a paragraph.  The first letter will be styled.&lt;/p&gt;
+&lt;div&gt;This div has content inserted before and after.&lt;/div&gt;
+    </code></pre>
+<hr>
+    <h5>Combinators</h5>
+    <p>
+        Combinators define the relationship between selectors.
+    </p>
+    <ul>
+        <li><strong>Descendant Selector (space):</strong> Selects elements that are descendants of another element (e.g., <code>div p</code> selects all <code>&lt;p&gt;</code> elements that are inside a <code>&lt;div&gt;</code> element).</li>
+        <li><strong>Child Selector (&gt;):</strong> Selects elements that are direct children of another element (e.g., <code>ul &gt; li</code> selects all <code>&lt;li&gt;</code> elements that are direct children of a <code>&lt;ul&gt;</code> element).</li>
+        <li><strong>Adjacent Sibling Selector (+):</strong> Selects an element that is the next sibling of another element (e.g., <code>h1 + p</code> selects the first <code>&lt;p&gt;</code> element that immediately follows an <code>&lt;h1&gt;</code> element).</li>
+        <li><strong>General Sibling Selector (~):</strong> Selects elements that are siblings of another element, but not necessarily immediately following it (e.g., <code>h1 ~ p</code> selects all <code>&lt;p&gt;</code> elements that are siblings of an <code>&lt;h1&gt;</code> element).</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+div p {
+  color: blue;
+}
+ul > li {
+  font-weight: bold;
+}
+h1 + p {
+  text-decoration: underline;
+}
+h1 ~ p {
+  color: green;
+}
+    </code></pre>
+    <pre><code>
+&lt;div&gt;
+  &lt;p&gt;This is a paragraph inside a div.&lt;/p&gt;
+  &lt;p&gt;This is another paragraph inside a div.&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;p&gt;Paragraph 1&lt;/p&gt;
+&lt;p&gt;Paragraph 2&lt;/p&gt;
+    </code></pre>
+<hr>
+  <h2>CSS Box Model</h2>
+  <p>
+    The CSS box model is a fundamental concept that describes how HTML elements are rendered on a page.
+    Every element can be thought of as a rectangular box, and styling these boxes is crucial for creating
+    layouts.  The box model consists of:
+  </p>
+  <ul>
+    <li><strong>Content:</strong> The actual content of the element (text, images, etc.).  The size of the content area can be set using the <code>width</code> and <code>height</code> properties.</li>
+    <li><strong>Padding:</strong> The space between the content and the border.  Padding is controlled by the <code>padding</code> property, and can be set for all four sides at once, or individually using <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code>.</li>
+    <li><strong>Border:</strong> A line that surrounds the padding and content.  The border is controlled by the <code>border</code> property, which is a shorthand for setting the <code>border-width</code>, <code>border-style</code>, and <code>border-color</code>.  You can also set these properties individually, and set border properties for individual sides (e.g., <code>border-top-width</code>).</li>
+    <li><strong>Margin:</strong> The space outside the border, separating the element from other elements.  Margin is controlled by the <code>margin</code> property, and can be set for all four sides at once, or individually using <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code>.  Margins can collapse vertically.</li>
+  </ul>
+  <img src="data:image/png;base64,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" alt="CSS Box Model" style="max-width:100%;">
+    <p>
+        <strong>Example:</strong>
+    </p>
+    <pre><code>
+.box-model-example {
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  border: 5px solid #0078d7;
+  margin: 30px;
+  background-color: #f0f4f8;
+}
+    </code></pre>
+    <pre><code>
+&lt;div class="box-model-example"&gt;
+  This is an example of the CSS box model.  It has a width of 300px, a height of 150px, 20px of padding, a 5px blue border, and 30px of margin.
+&lt;/div&gt;
+    </code></pre>
+<hr>
+  <h2>CSS Layout</h2>
+    <p>
+        CSS provides several properties and techniques for controlling the layout of elements on a webpage.  Here are some key concepts:
+    </p>
+    <h3>Display Property</h3>
+    <p>
+        The <code>display</code> property specifies the display behavior of an element.  Common values include:
+    </p>
+    <ul>
+        <li><code>block</code>:  The element takes up the full width available and starts a new line (e.g., <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>).</li>
+        <li><code>inline</code>: The element only takes up as much width as necessary and does not start a new line (e.g., <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>).</li>
+        <li><code>inline-block</code>:  A combination of inline and block; the element flows like inline but can have block-level properties like width and height.</li>
+        <li><code>none</code>:  The element is not displayed.</li>
+        <li><code>flex</code>:  Enables the Flexbox layout model.</li>
+        <li><code>grid</code>: Enables the Grid layout model.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+.block-example {
+  display: block;
+  width: 100%;
+  background-color: #0078d7;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.inline-example {
+  display: inline;
+  background-color: #f0f4f8;
+  padding: 5px;
+  margin-right: 10px;
+}
+.inline-block-example {
+  display: inline-block;
+  background-color: #fef08a;
+  padding: 10px;
+  width: 100px;
+  height: 50px;
+  margin-right: 10px;
+}
+.none-example {
+  display: none;
+}
+    </code></pre>
+    <pre><code>
+&lt;div class="block-example"&gt;Block Element 1&lt;/div&gt;
+&lt;div class="block-example"&gt;Block Element 2&lt;/div&gt;
+&lt;span class="inline-example"&gt;Inline Element 1&lt;/span&gt;
+&lt;span class="inline-example"&gt;Inline Element 2&lt;/span&gt;
+&lt;div class="inline-block-example"&gt;Inline-Block 1&lt;/div&gt;
+&lt;div class="inline-block-example"&gt;Inline-Block 2&lt;/div&gt;
+&lt;p class="none-example"&gt;This element is hidden.&lt;/p&gt;
+    </code></pre>
+<hr>
+    <h3>Position Property</h3>
+    <p>The <code>position</code> property controls how an element is positioned within its containing element.</p>
+    <ul>
+        <li><code>static</code>: The default value.  Elements are positioned according to the normal flow of the document.  The <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties have no effect on statically positioned elements.</li>
+        <li><code>relative</code>: The element is positioned relative to its normal position.  The <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties can be used to offset the element from its normal position.  Other elements are not affected by the offset.</li>
+        <li><code>absolute</code>: The element is positioned relative to its nearest positioned ancestor (an ancestor with a position other than static).  If there is no positioned ancestor, it is positioned relative to the initial containing block (the <code>&lt;html&gt;</code> element).  Absolutely positioned elements are removed from the normal flow of the document, and can overlap other elements.</li>
+        <li><code>fixed</code>: The element is positioned relative to the viewport (the browser window) and stays in place even when the page is scrolled.  Fixed positioning is useful for creating elements that remain visible regardless of scroll position, such as navigation bars or chat windows.</li>
+        <li><code>sticky</code>: The element is positioned based on the user's scroll position. It's relative until it reaches a specified offset, then it becomes fixed.  A sticky element toggles between relative and fixed, depending on the scroll position.</li>
+</ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+.relative-example {
+  position: relative;
+  top: 20px;
+  left: 30px;
+  background-color: #0078d7;
+  color: white;
+  padding: 10px;
+}
+.absolute-example {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background-color: #f0f4f8;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.fixed-example {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fef08a;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+.sticky-example {
+  position: sticky;
+  top: 0;
+  background-color: #e0f2fe;
+  padding: 10px;
+  margin-bottom: 200px;
+}
+    </code></pre>
+    <pre><code>
+&lt;div class="relative-example"&gt;Relative Element&lt;/div&gt;
+&lt;div class="absolute-example"&gt;Absolute Element&lt;/div&gt;
+&lt;div class="fixed-example"&gt;Fixed Element (stays at bottom)&lt;/div&gt;
+&lt;div class="sticky-example"&gt;Sticky Element (scroll to see it stick)&lt;/div&gt;
+&lt;p&gt;
+  Scroll down to see the sticky element in action.  It will stick to the top of the viewport when it reaches the top.
+&lt;/p&gt;
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+&lt;/p&gt;
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+&lt;/p&gt;
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+&lt;/p&gt;
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+&lt;/p&gt;
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+&lt;/p&gt;
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+&lt;/p&gt;
+    </code></pre>
+<hr>
+    <h3>Flexbox</h3>
+    <p>
+        Flexbox is a powerful layout model for creating one-dimensional layouts (rows or columns).  It provides properties for controlling the alignment, direction, and spacing of items within a container.  Flexbox is particularly useful for aligning elements within a container, even when their sizes are unknown or dynamic.
+    </p>
+    <p>
+        Key Flexbox properties:
+    </p>
+    <ul>
+        <li><code>display: flex;</code>:  Defines the container as a flex container, enabling flexbox properties.</li>
+        <li><code>flex-direction</code>:  Specifies the direction of the flex items within the container (<code>row</code>, <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code>).</li>
+        <li><code>justify-content</code>:  Aligns flex items along the main axis (horizontal for rows, vertical for columns) (<code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, <code>space-evenly</code>).</li>
+        <li><code>align-items</code>:  Aligns flex items along the cross axis (vertical for rows, horizontal for columns) (<code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code>).</li>
+        <li><code>flex-wrap</code>:  Specifies whether the flex items should wrap if they don't fit in the container (<code>nowrap</code>, <code>wrap</code>, <code>wrap-reverse</code>).</li>
+        <li><code>flex</code>:  A shorthand property for setting <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>.</li>
+        <li><code>flex-grow</code>:  Specifies how much the item will grow relative to the other flex items in the container.</li>
+        <li><code>flex-shrink</code>:  Specifies how much the item will shrink relative to the other flex items in the container.</li>
+        <li><code>flex-basis</code>:  Specifies the initial size of the flex item before any growing or shrinking occurs.</li>
+        <li><code>align-self</code>:  Overrides the <code>align-items</code> property for a specific flex item.</li>
+        <li><code>order</code>: Specifies the order of a flex item within the flex container.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f4f8;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.flex-item {
+  background-color: #0078d7;
+  color: white;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+}
+.flex-item-grow {
+    flex-grow: 1;
+    margin: 5px;
+}
+    </code></pre>
+    <pre><code>
+&lt;div class="flex-container"&gt;
+  &lt;div class="flex-item"&gt;Item 1&lt;/div&gt;
+  &lt;div class="flex-item"&gt;Item 2&lt;/div&gt;
+  &lt;div class="flex-item"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="flex-container"&gt;
+  &lt;div class="flex-item flex-item-grow"&gt;Item 4 (Grow)&lt;/div&gt;
+  &lt;div class="flex-item flex-item-grow"&gt;Item 5 (Grow)&lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+<hr>
+    <h3>Grid</h3>
+    <p>
+        Grid is a two-dimensional layout model that allows you to create complex, responsive layouts with rows and columns.  It offers more control than Flexbox for multi-dimensional layouts.  Grid is excellent for creating page layouts, form layouts, and any layout where you need precise control over the positioning of elements in both rows and columns.
+    </p>
+    <p>
+        Key Grid properties:
+    </p>
+     <ul>
+        <li><code>display: grid;</code>: Defines the element as a grid container.</li>
+        <li><code>grid-template-rows</code>:  Specifies the height of the rows in the grid container.</li>
+        <li><code>grid-template-columns</code>: Specifies the width of the columns in the grid container.</li>
+        <li><code>grid-template-areas</code>:  Defines the layout of the grid by referencing the names of the grid items.</li>
+        <li><code>grid-row-gap</code>:  Specifies the gap between rows.  Renamed to <code>row-gap</code> in newer CSS specifications.</li>
+        <li><code>grid-column-gap</code>: Specifies the gap between columns. Renamed to <code>column-gap</code> in newer CSS specifications.</li>
+        <li><code>gap</code>:  A shorthand property for setting both <code>row-gap</code> and <code>column-gap</code>.</li>
+        <li><code>justify-items</code>: Aligns grid items along the inline axis (horizontally in a row-direction grid, vertically in a column-direction grid).</li>
+        <li><code>align-items</code>:  Aligns grid items along the block axis (vertically in a row-direction grid, horizontally in a column-direction grid).</li>
+        <li><code>justify-content</code>: Aligns the grid within the grid container along the inline axis.</li>
+        <li><code>align-content</code>: Aligns the grid within the grid container along the block axis.</li>
+        <li><code>grid-auto-rows</code>:  Specifies the size of implicitly created rows.</li>
+        <li><code>grid-auto-columns</code>: Specifies the size of implicitly created columns.</li>
+        <li><code>grid-auto-flow</code>:  Controls how auto-placed items are inserted into the grid.</li>
+        <li><code>grid-row-start</code>, <code>grid-row-end</code>, <code>grid-column-start</code>, <code>grid-column-end</code>:  Specify the starting and ending lines of a grid item within the grid.</li>
+        <li><code>grid-area</code>:  A shorthand property for setting <code>grid-row-start</code>, <code>grid-column-start</code>, <code>grid-row-end</code>, and <code>grid-column-end</code>.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 100px 1fr;
+  grid-template-rows: auto 100px;
+  gap: 10px;
+  background-color: #f0f4f8;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.grid-item {
+  background-color: #0078d7;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.grid-item-1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.grid-item-3 {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.grid-container-areas {
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'sidebar main main'
+    'footer footer footer';
+  gap: 10px;
+  padding: 10px;
+  background-color: #e5e7eb;
+}
+.grid-container-areas > div {
+  background-color: #0078d7;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+.header {
+  grid-area: header;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+}
+    </code></pre>
+    <pre><code>
+&lt;div class="grid-container"&gt;
+  &lt;div class="grid-item grid-item-1"&gt;Item 1 (span 2 columns)&lt;/div&gt;
+  &lt;div class="grid-item"&gt;Item 2&lt;/div&gt;
+  &lt;div class="grid-item grid-item-3"&gt;Item 3 (start 2nd row, span 2 columns)&lt;/div&gt;
+  &lt;div class="grid-item"&gt;Item 4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid-container-areas"&gt;
+  &lt;div class="header"&gt;Header&lt;/div&gt;
+  &lt;div class="sidebar"&gt;Sidebar&lt;/div&gt;
+  &lt;div class="main"&gt;Main Content&lt;/div&gt;
+  &lt;div class="footer"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+<hr>
+  <h2>CSS Styling Text</h2>
+  <p>
+    CSS provides many properties for styling the text within HTML elements:
+  </p>
+  <ul>
+    <li><code>font-family</code>:  Specifies the font to use (e.g., "Arial", "Times New Roman", "sans-serif").  You can specify a list of font families as a fallback in case the primary font is not available.</li>
+    <li><code>font-size</code>:  Sets the size of the font (e.g., "16px", "1.2em", "100%").  Use relative units like <code>em</code> or <code>rem</code> for better accessibility and responsiveness.</li>
+    <li><code>font-weight</code>:  Sets the weight (boldness) of the font (e.g., "normal", "bold", "bolder", "lighter", or numeric values like "400", "700").</li>
+    <li><code>font-style</code>:  Sets the style of the font (e.g., "normal", "italic", "oblique").</li>
+    <li><code>color</code>:  Sets the color of the text.  Colors can be specified using keywords, hex codes, RGB, RGBA, HSL, or HSLA values.</li>
+    <li><code>text-align</code>:  Aligns the text within its container (e.g., "left", "center", "right", "justify").</li>
+    <li><code>text-decoration</code>:  Adds or removes decoration from text (e.g., "none", "underline", "overline", "line-through").</li>
+    <li><code>line-height</code>:  Sets the vertical space between lines of text.  A value without a unit (e.g., 1.5) multiplies the font size.</li>
+    <li><code>letter-spacing</code>:  Sets the horizontal spacing between characters.</li>
+    <li><code>word-spacing</code>: Sets the horizontal spacing between words.</li>
+    <li><code>text-shadow</code>: Adds a shadow to the text.  You can specify the horizontal offset, vertical offset, blur radius, and color of the shadow.</li>
+    <li><code>text-transform</code>:  Controls the capitalization of text (e.g., "none", "capitalize", "uppercase", "lowercase").</li>
+    <li><code>white-space</code>:  Controls how whitespace within an element is handled (e.g., "normal", "nowrap", "pre", "pre-wrap", "pre-line").</li>
+  </ul>
+  <p><strong>Example:</strong></p>
+  <pre><code>
+.text-example {
+  font-family: "Arial", sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-style: italic;
+  color: #0078d7;
+  text-align: center;
+  text-decoration: underline;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  white-space: pre-wrap;
+}
+  </code></pre>
+  <pre><code>
+&lt;p class="text-example"&gt;
+  This is an example of styled text.  It uses Arial font, is 1.2em in size, bold, italic, blue, centered, underlined, has a line height of 1.5, 2px letter spacing, 5px word spacing, a text shadow, is uppercased, and preserves whitespace.
+&lt;/p&gt;
+  </code></pre>
+<hr>
+    <h2>CSS Transitions and Animations</h2>
+    <p>
+        CSS allows you to create dynamic and engaging web pages with transitions and animations:
+    </p>
+    <h3>Transitions</h3>
+    <p>
+        Transitions allow you to smoothly change CSS properties over a specified duration when an element changes its state (e.g., when hovered).  You define the properties you want to transition, the duration of the transition, and the timing function (which controls the speed curve of the transition).
+    </p>
+    <p>
+        Key transition properties:
+    </p>
+    <ul>
+        <li><code>transition-property</code>:  Specifies the CSS property or properties to which the transition effect should be applied (e.g., <code>all</code>, <code>background-color</code>, <code>transform</code>).</li>
+        <li><code>transition-duration</code>:  Specifies the length of time a transition should take to complete (e.g., <code>0.3s</code>, <code>200ms</code>).</li>
+        <li><code>transition-timing-function</code>:  Specifies the speed curve of the transition effect (e.g., <code>ease</code>, <code>linear</code>, <code>ease-in</code>, <code>ease-out</code>, <code>ease-in-out</code>, <code>cubic-bezier()</code>).</li>
+        <li><code>transition-delay</code>:  Specifies a delay before the transition effect starts.</li>
+        <li><code>transition</code>: A shorthand property for setting all of the above properties.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+.transition-example {
+  width: 100px;
+  height: 100px;
+  background-color: #0078d7;
+  transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.transition-example:hover {
+  background-color: #fef08a;
+  transform: rotate(180deg);
+}
+    </code></pre>
+    <pre><code>
+&lt;div class="transition-example"&gt;Hover Me&lt;/div&gt;
+    </code></pre>
+    <hr>
+    <h3>Animations</h3>
+    <p>
+        Animations allow you to create more complex sequences of CSS property changes over time.  You define keyframes to control the animation at different points.  Animations provide more control than transitions, allowing you to create looping animations and control the animation at specific points in its sequence.
+    </p>
+     <p>
+        Key animation properties:
+    </p>
+    <ul>
+        <li><code>@keyframes</code>:  Defines the sequence of keyframes for an animation.  Keyframes specify the styles at different points during the animation.</li>
+        <li><code>animation-name</code>:  Specifies the name of the <code>@keyframes</code> rule that defines the animation's sequence.</li>
+        <li><code>animation-duration</code>:  Specifies the length of time an animation should take to complete.</li>
+        <li><code>animation-timing-function</code>: Specifies the speed curve of the animation effect.</li>
+        <li><code>animation-delay</code>:  Specifies a delay before the animation starts.</li>
+        <li><code>animation-iteration-count</code>:  Specifies the number of times an animation should play (e.g., <code>1</code>, <code>infinite</code>).</li>
+         <li><code>animation-direction</code>: Specifies whether an animation should play forwards, backwards, or in alternate cycles.</li>
+        <li><code>animation-fill-mode</code>:  Specifies how an element should be styled when an animation is not playing (before it starts, after it ends).</li>
+        <li><code>animation</code>: A shorthand property for setting all of the above animation properties.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+.animation-example {
+  width: 100px;
+  height: 100px;
+  background-color: #0078d7;
+  animation-name: changeColorAndSize;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes changeColorAndSize {
+  0% {
+    background-color: #0078d7;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #fef08a;
+    transform: scale(1.5);
+  }
+  100% {
+    background-color: #0078d7;
+    transform: scale(1);
+  }
+}
+    </code></pre>
+    <pre><code>
+&lt;div class="animation-example"&gt;Animate Me&lt;/div&gt;
+    </code></pre>
+
+  <hr>
+    <h2>Responsive Design</h2>
+    <p>
+        Responsive web design is the practice of designing websites to adapt to different screen sizes and devices (desktops, tablets, smartphones).  CSS plays a crucial role in responsive design.
+    </p>
+    <h3>Media Queries</h3>
+    <p>
+        Media queries allow you to apply different CSS rules based on the characteristics of the user's device, such as its width, height, and orientation.  They allow you to create different layouts and styles for different devices, ensuring a consistent and user-friendly experience across all platforms.
+    </p>
+     <p>
+        Media queries consist of a media type (e.g., <code>all</code>, <code>screen</code>, <code>print</code>) and one or more media features (e.g., <code>max-width</code>, <code>min-width</code>, <code>orientation</code>).
+    </p>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+body {
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+  .container {
+    width: 1170px;
+    margin: 0 auto;
+  }
+}
+    </code></pre>
+    <pre><code>
+&lt;div class="container"&gt;
+  &lt;p&gt;
+    This website uses media queries to adjust the font size and container width based on the screen size.  On small screens (less than 768px), the font size is 14px and the container takes up the full width.  On large screens (1200px and wider), the font size is 18px and the container has a fixed width of 1170px and is centered.
+  &lt;/p&gt;
+&lt;/div&gt;
+    </code></pre>
+<hr>
+    <h3>Flexible Units</h3>
+    <p>
+        Using relative units like percentages (%), em, and rem instead of fixed units like pixels (px) helps elements scale more effectively on different screens.  Relative units allow your design to adapt to the size of the viewport or the user's font settings, making your website more accessible and responsive.
+    </p>
+    <ul>
+        <li><code>%</code>:  Specifies a size as a percentage of the element's containing element.</li>
+        <li><code>em</code>:  Specifies a size relative to the font size of the element itself.</li>
+        <li><code>rem</code>: Specifies a size relative to the font size of the root element (<code>&lt;html&gt;</code>).</li>
+         <li><code>vw</code>:  Specifies a size relative to 1% of the viewport's width.</li>
+        <li><code>vh</code>: Specifies a size relative to 1% of the viewport's height.</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+    </code></pre>
+    <pre><code>
+&lt;div class="container"&gt;
+  &lt;h2&gt;Responsive Design Example&lt;/h2&gt;
+  &lt;p&gt;
+    This container has a width of 90% of its parent, but a maximum width of 1200px.  The heading font size is 2rem (2 times the root font size), and the paragraph font size is 1em (the same as the element's font size).
+  &lt;/p&gt;
+&lt;/div&gt;
+    </code></pre>
+<hr>
+    <h3>Viewport Meta Tag</h3>
+    <p>
+        The <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> tag in the <code>&lt;head&gt;</code> is essential for ensuring that your page scales correctly on mobile devices.  It tells the browser how to control the page's scaling and dimensions.
+    </p>
+    <p>
+        Key attributes of the viewport meta tag:
+    </p>
+    <ul>
+        <li><code>width=device-width</code>: Sets the width of the viewport to the width of the device.</li>
+        <li><code>initial-scale=1.0</code>: Sets the initial zoom level when the page is first loaded.</li>
+        <li><code>maximum-scale</code>:  Sets the maximum zoom level.</li>
+        <li><code>minimum-scale</code>:  Sets the minimum zoom level.</li>
+        <li><code>user-scalable</code>:  Specifies whether the user can zoom in or out (<code>yes</code> or <code>no</code>).</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Responsive Page&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;style&gt;
+    body {
+      font-size: 16px;
+      padding: 10px;
+    }
+    @media (max-width: 480px) {
+      body {
+        font-size: 12px;
+        padding: 5px;
+      }
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Responsive Design&lt;/h1&gt;
+  &lt;p&gt;
+    This page uses the viewport meta tag to ensure it is displayed correctly on mobile devices. The font size and padding adjust based on the screen width.
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <hr>
+</body>
+<footer>
+    <p>Thank you for reading the CSS tutorial!</p>
+    <p>Made with 💻 by © NEXH Tech 2025</p>
+  </footer>
+</html>
